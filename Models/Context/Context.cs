@@ -4,13 +4,13 @@ using Voting_App.Models;
 
 
 namespace Models.Context {
-    public class Context : IdentityDbContext {
+    public class Context : IdentityDbContext<ApplicationUser> {
         public Context (DbContextOptions options) : base (options) 
         {
 
         }
-
         
+        public DbSet<Vote> Votes { get; set; }
 
         
     }

@@ -1,11 +1,18 @@
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Models.Context;
+using Voting_App.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
-builder.Services.AddIdentity<IdentityUser , IdentityRole>()
+
+builder.Services.AddDbContext<Context>(options =>
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
+builder.Services.AddIdentity<ApplicationUser , IdentityRole>()
     .AddEntityFrameworkStores<Context>()
     .AddDefaultTokenProviders();
 var app = builder.Build();
