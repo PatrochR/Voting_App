@@ -2,7 +2,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Models.Context;
 using Voting_App.Models;
-
+using Voting_App.Repository;
+using Microsoft.AspNetCore.Authentication.Cookies;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -10,11 +11,16 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<IUserRegister , UserRegister>();
 
+builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+    .AddCookie(option => 
+    {
+        option.LoginPath = "/Account/Login";
+        option.LogoutPath = "/Account/Logout";
+        option.ExpireTimeSpan = TimeSpan.FromDays(10);
+    });
 
-builder.Services.AddIdentity<ApplicationUser , IdentityRole>()
-    .AddEntityFrameworkStores<Context>()
-    .AddDefaultTokenProviders();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
