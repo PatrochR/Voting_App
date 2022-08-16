@@ -22,21 +22,6 @@ namespace Voting_App.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder, 1L, 1);
 
-            modelBuilder.Entity("PlanUser", b =>
-                {
-                    b.Property<int>("PlansPlanId")
-                        .HasColumnType("int");
-
-                    b.Property<int>("UsersUserId")
-                        .HasColumnType("int");
-
-                    b.HasKey("PlansPlanId", "UsersUserId");
-
-                    b.HasIndex("UsersUserId");
-
-                    b.ToTable("PlanUser");
-                });
-
             modelBuilder.Entity("Voting_App.Models.Plan", b =>
                 {
                     b.Property<int>("PlanId")
@@ -57,6 +42,21 @@ namespace Voting_App.Migrations
                     b.HasKey("PlanId");
 
                     b.ToTable("Plans");
+                });
+
+            modelBuilder.Entity("Voting_App.Models.PlanToUser", b =>
+                {
+                    b.Property<int>("PlanId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("PlanId", "UserId");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("PlanToUsers");
                 });
 
             modelBuilder.Entity("Voting_App.Models.User", b =>
@@ -116,19 +116,23 @@ namespace Voting_App.Migrations
                     b.ToTable("Votes");
                 });
 
-            modelBuilder.Entity("PlanUser", b =>
+            modelBuilder.Entity("Voting_App.Models.PlanToUser", b =>
                 {
-                    b.HasOne("Voting_App.Models.Plan", null)
-                        .WithMany()
-                        .HasForeignKey("PlansPlanId")
+                    b.HasOne("Voting_App.Models.Plan", "Plan")
+                        .WithMany("PlanToUsers")
+                        .HasForeignKey("PlanId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Voting_App.Models.User", null)
-                        .WithMany()
-                        .HasForeignKey("UsersUserId")
+                    b.HasOne("Voting_App.Models.User", "Users")
+                        .WithMany("PlanToUsers")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Plan");
+
+                    b.Navigation("Users");
                 });
 
             modelBuilder.Entity("Voting_App.Models.Vote", b =>
@@ -152,11 +156,15 @@ namespace Voting_App.Migrations
 
             modelBuilder.Entity("Voting_App.Models.Plan", b =>
                 {
+                    b.Navigation("PlanToUsers");
+
                     b.Navigation("Votes");
                 });
 
             modelBuilder.Entity("Voting_App.Models.User", b =>
                 {
+                    b.Navigation("PlanToUsers");
+
                     b.Navigation("Votes");
                 });
 #pragma warning restore 612, 618

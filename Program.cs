@@ -11,7 +11,10 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Context>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
+
+
 builder.Services.AddScoped<IUserRegister , UserRegister>();
+builder.Services.AddScoped<IPlanRepository , PlanRepository>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option => 
@@ -41,6 +44,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Plan}/{action=Index}/{id?}");
 
 app.Run();

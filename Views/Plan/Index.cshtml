@@ -1,0 +1,53 @@
+@model IEnumerable<Voting_App.Models.Plan>
+
+
+
+@if(Model == null)
+{
+    <div class="alert alert-danger" role="alert">
+        برنامه ای نداریم    
+    </div>
+}
+else
+{
+<div style="width:650px;">
+<p>
+    <a asp-action="Create" class="btn btn-info">برنامه جدید</a>
+</p>
+<table class="table glass">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                کاربر
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @item.PlanToUsers.Single(s => s.PlanId == item.PlanId).Users.UserName
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+
+</div>
+
+
+
+}
+

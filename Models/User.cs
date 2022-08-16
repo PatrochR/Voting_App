@@ -18,6 +18,6 @@ namespace Voting_App.Models
         public string Password { get; set; }
 
         public List<Vote> Votes { get; set; }
-        public List<Plan> Plans { get; set; }
+        public List<PlanToUser> PlanToUsers { get; set; }
     }
 }

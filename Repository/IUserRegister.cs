@@ -27,7 +27,7 @@ namespace Voting_App.Repository
         }
         public User GetUserByUserName(string username)
         {
-            return _context.Users.FirstOrDefault(user => user.UserNameConfirmed == username.ToUpper());
+            return _context.Users.SingleOrDefault(user => user.UserNameConfirmed == username.ToUpper());
         }
         public bool AddUser(User user)
         {
