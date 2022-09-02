@@ -1,0 +1,39 @@
+@model Voting_App.Models.Vote
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Vote</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PlanId" value="@ViewBag.planId" />
+            <div class="form-group">
+                <label asp-for="VoteData" class="control-label"></label>
+                <input asp-for="VoteData" class="form-control" />
+                <span asp-validation-for="VoteData" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DayTime" class="control-label"></label>
+                <select asp-for="DayTime" class="form-control" asp-items="@Html.GetEnumSelectList<Vote.Date>()" ></select>
+                <span asp-validation-for="DayTime" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
