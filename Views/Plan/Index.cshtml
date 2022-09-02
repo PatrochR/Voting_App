@@ -1,4 +1,4 @@
-@model IEnumerable<Voting_App.Models.Plan>
+@model IEnumerable<Plan>
 
 
 
@@ -12,7 +12,7 @@ else
 {
 <div style="width:650px;">
 <p>
-    <a asp-action="Create" class="btn btn-info">برنامه جدید</a>
+    <a asp-action="Create" class="btn btn-success">برنامه جدید</a>
 </p>
 <table class="table glass">
     <thead>
@@ -33,12 +33,17 @@ else
                 @Html.DisplayFor(modelItem => item.Name)
             </td>
             <td>
-                @item.PlanToUsers.Single(s => s.PlanId == item.PlanId).Users.UserName
+                @item.User.UserName
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
-                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+                @if(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)) == item.UserId)
+                {
+                <a asp-action="Edit" asp-route-planId="@item.PlanId" class="btn btn-warning btn-sm">ویرایش</a>
+                <a asp-action="Delete" asp-route-planId="@item.PlanId" class="btn btn-danger btn-sm">حذف</a>
+                }
+
+
+                <a asp-action="Details" asp-route-planId="@item.PlanId" class="btn btn-info btn-sm">جزئیات</a>
             </td>
         </tr>
 }
@@ -46,7 +51,6 @@ else
 </table>
 
 </div>
-
 
 
 }
