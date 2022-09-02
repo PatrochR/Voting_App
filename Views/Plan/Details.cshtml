@@ -1,7 +1,7 @@
 @model PlanDetailsViewModel
 
 <div class="row">
-    <div class="col-3 text-center">
+    <div class="col-3 text-center ">
         <img src="/Images/Plan/@(Model.PlanImageUrl).jpg"  />
         <h3>@Model.PlanName</h3>
     </div>
@@ -26,18 +26,29 @@
             border-radius: 50px;
             margin-bottom: 10px;
             " class="row">
+                
+                @if(User.FindFirstValue(ClaimTypes.NameIdentifier) == item.UserId.ToString())
+                {
                 <div class="col-3 text-center">
-                    @if(User.FindFirstValue(ClaimTypes.NameIdentifier) == item.UserId.ToString())
-                    {
-                        <a style="margin-top: 10px;" class="btn btn-danger btn-sm" asp-route-voteId="@item.VoteId" asp-controller="Vote" asp-action="Delete" >Delete</a>
-                    }
+                    <a style="margin-top: 10px;" class="btn btn-danger btn-sm" asp-route-voteId="@item.VoteId" asp-controller="Vote" asp-action="Delete" >Delete</a>
                 </div>
-
                 <div class="col-3 text-center">
                     <p style="font-size: 20px; margin-top: 10px; color: white;">
                     @item.DayTime
                     </p>
                 </div>
+                }
+                else
+                {
+                <div class="col-6 text-center">
+                    <p style="font-size: 20px; margin-top: 10px; color: white;">
+                    @item.DayTime
+                    </p>
+                </div>
+                    
+                }
+
+                
 
                 <div class="col-3 text-center">
                     <p style="font-size: 20px; margin-top: 10px; color: white;">

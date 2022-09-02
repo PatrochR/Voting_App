@@ -14,10 +14,13 @@ html {
 }
 
 body {
+
+  background: linear-gradient(to bottom right, #66ffff 0%, #ffcccc 100%);
   margin-bottom: 60px;
 }
 
 .glass{
+  
   background: rgba( 255, 255, 255, 0.35 );
   box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
   backdrop-filter: blur( 7px );
@@ -26,3 +29,7 @@ body {
   border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
 
+.headersite{
+  text-align: right;
+  margin: 30px;
+}
