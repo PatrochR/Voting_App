@@ -94,6 +94,19 @@ namespace Voting_App.Controllers
             return RedirectToAction(nameof(Index));
         }
 
+
+        public async Task<IActionResult> Delete(int planId)
+        {
+            var plan = await _context.Plans.FindAsync(planId);
+            if(plan == null) return NotFound();
+            var voteInPlan = plan.Votes.ToList();
+            _context.RemoveRange(voteInPlan);
+            await _context.SaveChangesAsync();
+            _context.Plans.Remove(plan);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+        }
+
         public async Task<IActionResult> Details(int planId)
         {
             var plan = await _context.Plans.FindAsync(planId);
