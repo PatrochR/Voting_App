@@ -12,12 +12,13 @@ namespace Voting_App.Models
         [Required]
         [MaxLength(50)]
         public string UserNameConfirmed { get; set; }
-
         [Required]
-        [MaxLength(50)]
+        [MaxLength(50)]  
         public string Password { get; set; }
 
+        
+
         public List<Vote> Votes { get; set; }
-        public List<PlanToUser> PlanToUsers { get; set; }
+        public List<Plan> Plans { get; set; }
     }
 }

@@ -1,13 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 namespace Voting_App.Models
 {
-    public enum Date
-    {
-        Morning,
-        Noon,
-        Evening,
-        Night
-    }
+    
     public class Vote
     {
         [Key]
@@ -17,12 +11,23 @@ namespace Voting_App.Models
         [Required]
         public int PlanId { get; set; }
         [Required]
+        [DisplayFormat(DataFormatString = "{0:dd.MM.yyyy}")]
         public DateTime VoteData { get; set; }
         [Required]
         public Date DayTime { get; set; }
         
+        
 
         public Plan Plan { get; set; }
         public User User { get; set; }
+
+
+        public enum Date
+        {
+        Morning,
+        Noon,
+        Evening,
+        Night
+        }
     }
 }
