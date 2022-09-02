@@ -52,7 +52,7 @@ namespace Voting_App.Controllers
                 if (Url.IsLocalUrl(ViewBag.returnUrl))
                     return Redirect(ViewBag.returnUrl);
                 else
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index" , "Plan");
             }
             return View(model); 
         } 
