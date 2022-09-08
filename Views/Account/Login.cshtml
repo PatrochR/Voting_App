@@ -2,11 +2,16 @@
 
 
 
+<div style="  
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);">
+    <h3>Welcome To Plan</h3>
+</div>
 
-<h4>LoginViewModel</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="col-4 centerScreen glass">
+    <div style="padding: 30px;">
         <form asp-action="Login">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -24,6 +29,8 @@
                     <input class="form-check-input" asp-for="RememberMe" /> @Html.DisplayNameFor(model => model.RememberMe)
                 </label>
             </div>
+
+            
             <div class="form-group">
                 <input type="submit" value="Login" class="btn btn-primary" />
             </div>

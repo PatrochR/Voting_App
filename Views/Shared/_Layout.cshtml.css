@@ -46,3 +46,30 @@ button.accept-policy {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.circle1,
+.circle2 
+{
+  background: white;  
+  background: linear-gradient(
+    to right bottom,
+    rgba(255 , 255 , 255 , 0.9),
+    rgba(255 , 255 , 255 , 0.1)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle1{
+  top: 5%;
+  right: 15%;
+}
+
+.circle2{
+  bottom: 5%;
+  left: 10%;
+}
+

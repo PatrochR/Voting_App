@@ -10,14 +10,22 @@
 </head>
 <body>
     <header class="headersite">
-       <a class="btn btn-danger" asp-action="Logout" asp-controller="Account" >LogOut</a>
+        @if(User.Identity.IsAuthenticated)
+        {
+          <a class="btn btn-danger" asp-action="Logout" asp-controller="Account" >LogOut</a>
+        }
+        else
+        {
+          <a class="btn btn-info" asp-action="Register" asp-controller="Account" >Register</a>
+        }
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+    <div class="container" style="z-index: 2;">
+        <main role="main" class="pb-3" style="z-index: 2;">
             @RenderBody()
         </main>
     </div>
-
+    <div class="circle1"></div>
+    <div class="circle2"></div>
     <footer class="border-top footer text-muted">
         <div class="container">
             &copy; 2022 - Voting_App - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>

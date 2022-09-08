@@ -1,19 +1,19 @@
 @model PlanDetailsViewModel
 
-<div class="row">
+<div class="row glass">
     <div class="col-3 text-center ">
         <img src="/Images/Plan/@(Model.PlanImageUrl).jpg"  />
         <h3>@Model.PlanName</h3>
     </div>
     <div class="col-8" dir="rtl">
-        <p>@Model.PlanDescription</p>
-        <br>
-        <p>
+        <p style="border-bottom: 1px solid #07B4B4; margin-bottom: 5px; padding-bottom: 10px;">@Model.PlanDescription</p>
+        
+        <p >
             <a asp-action="Create" asp-controller="Vote" asp-route-planId="@Model.PlanId" class="btn btn-success" >نظر من</a>
         </p>
         @if(Model.Votes == null)
         {
-            <h1>دیدگاهی وجود ندارد</h1>
+            <h1>There is no Vote</h1>
         }
         else
         {
@@ -37,22 +37,9 @@
                     @item.DayTime
                     </p>
                 </div>
-                }
-                else
-                {
-                <div class="col-6 text-center">
-                    <p style="font-size: 20px; margin-top: 10px; color: white;">
-                    @item.DayTime
-                    </p>
-                </div>
-                    
-                }
-
-                
-
                 <div class="col-3 text-center">
                     <p style="font-size: 20px; margin-top: 10px; color: white;">
-                    @item.VoteData
+                    @item.VoteData.ToString("yyyy-MM-dd")
                     </p>
                 </div>
 
@@ -61,6 +48,29 @@
                     @item.User.UserName
                     </p>
                 </div>
+                }
+                else
+                {
+                <div class="col-4 text-center">
+                    <p style="font-size: 20px; margin-top: 10px; color: white;">
+                    @item.DayTime
+                    </p>
+                </div>
+                
+                <div class="col-4 text-center">
+                    <p style="font-size: 20px; margin-top: 10px; color: white;">
+                    @item.VoteData.ToString("yyyy-MM-dd")
+                    </p>
+                </div>
+
+                <div class="col-4 text-center">
+                    <p style="font-size: 20px; margin-top: 10px; color: white;">
+                    @item.User.UserName
+                    </p>
+                </div>
+                }
+
+    
             </div>
         }
         }

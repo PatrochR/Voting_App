@@ -5,25 +5,25 @@
 @if(Model == null)
 {
     <div class="alert alert-danger" role="alert">
-        برنامه ای نداریم    
+        NO Plan !
     </div>
 }
 else
 {
 <div class="">
 <p>
-    <a asp-action="Create" class="btn btn-success">برنامه جدید</a>
+    <a asp-action="Create" class="btn btn-success">New Plan</a>
 </p>
 
 
-    <table class="table glass text-center">
+    <table class="table glass text-center" style="z-index: 2;">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Name)
             </th>
             <th>
-                کاربر
+                User
             </th>
             <th></th>
         </tr>
@@ -40,13 +40,13 @@ else
             <td>
                 @if(int.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)) == item.UserId)
                 {
-                <a asp-action="Edit" asp-route-planId="@item.PlanId" class="btn btn-warning btn-sm">ویرایش</a>
+                <a asp-action="Edit" asp-route-planId="@item.PlanId" class="btn btn-warning btn-sm">Edit</a>
                 
-                <a asp-action="Delete" asp-route-planId="@item.PlanId" class="btn btn-danger btn-sm">حذف</a>
+                <a asp-action="Delete" asp-route-planId="@item.PlanId" class="btn btn-danger btn-sm">Delete</a>
                 }
 
 
-                <a asp-action="Details" asp-route-planId="@item.PlanId" class="btn btn-info btn-sm">جزئیات</a>
+                <a asp-action="Details" asp-route-planId="@item.PlanId" class="btn btn-info btn-sm">Details</a>
             </td>
         </tr>
 }

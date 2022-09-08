@@ -33,3 +33,10 @@ body {
   text-align: right;
   margin: 30px;
 }
+
+.centerScreen{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
