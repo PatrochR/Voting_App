@@ -11,10 +11,10 @@ namespace Voting_App.Models
 
         [Required]
         [MaxLength(70)]
-        [Display(Name = "نام", AutoGenerateFilter=false)]  
+        [Display(Name = "Name", AutoGenerateFilter=false)]  
         public string Name { get; set; }
         [Required]
-        [Display(Name = "توضیح", AutoGenerateFilter=false)]  
+        [Display(Name = "Description", AutoGenerateFilter=false)]  
         public string Description { get; set; }
         
         public List<Vote> Votes { get; set; }

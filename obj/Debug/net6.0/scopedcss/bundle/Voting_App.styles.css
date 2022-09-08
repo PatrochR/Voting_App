@@ -47,3 +47,30 @@ button.accept-policy[b-vdcr16k19u] {
   white-space: nowrap;
   line-height: 60px;
 }
+
+.circle1[b-vdcr16k19u],
+.circle2[b-vdcr16k19u] 
+{
+  background: white;  
+  background: linear-gradient(
+    to right bottom,
+    rgba(255 , 255 , 255 , 0.9),
+    rgba(255 , 255 , 255 , 0.1)
+  );
+  height: 20rem;
+  width: 20rem;
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.circle1[b-vdcr16k19u]{
+  top: 5%;
+  right: 15%;
+}
+
+.circle2[b-vdcr16k19u]{
+  bottom: 5%;
+  left: 10%;
+}
+
