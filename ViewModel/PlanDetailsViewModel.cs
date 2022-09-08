@@ -7,14 +7,14 @@ namespace Voting_App.ViewModel
     {
         public int PlanId {get; set;}
 
-        [Display(Name = "نام")]
+        [Display(Name = "Name")]
         [Required]
         public string PlanName { get; set; }
 
-        [Display(Name = "توضیحات")]
+        [Display(Name = "Description")]
         [Required]
         public string PlanDescription { get; set; }
-        [Display(Name = "عکس")]
+        [Display(Name = "Image")]
         public string PlanImageUrl { get; set; }
         public List<Vote> Votes { get; set; }
 
