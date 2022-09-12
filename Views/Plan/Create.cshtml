@@ -1,10 +1,14 @@
 @model Voting_App.Models.Plan
-<div class="d-flex flex-column">
-<div class="position-absolute top-0 start-50 translate-middle">
-<h4>New Plan</h4>
+
+<div style="  
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);">
+    <h3>Create Plan</h3>
 </div>
 
-<div class="col-4 position-absolute top-50 start-50 translate-middle glass">
+<div class="col-md-6 col-sm-7 col-7 col-xl-4  centerScreen glass">
     <div style="padding: 30px;">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
@@ -25,7 +29,7 @@
     </div>
 </div>
 
-</div>
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
 }

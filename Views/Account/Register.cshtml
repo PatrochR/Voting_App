@@ -1,11 +1,16 @@
 @model Voting_App.ViewModel.RegisterViewModel
 
 
+<div style="  
+  position: absolute;
+  left: 50%;
+  top: 30%;
+  transform: translate(-50%, -50%);">
+    <h3>Register</h3>
+</div>
 
-<h4>User</h4>
-<hr />
-<div class="row">
-    <div class="col-md-4">
+<div class="col-md-6 col-sm-7 col-7 col-xl-4 centerScreen glass">
+    <div style="padding: 30px;">
         <form asp-action="Register" method="post" asp-route-returnurl="@ViewBag.returnurl"> 
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
@@ -19,15 +24,14 @@
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Register" class="btn btn-primary" style="margin: 5px;" />
+                <a class="btn btn-success" asp-action="Login" asp-controller="Account" >Login</a>
             </div>
         </form>
     </div>
 </div>
 
-<div>
-    <a asp-action="Index">Back to List</a>
-</div>
+
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
