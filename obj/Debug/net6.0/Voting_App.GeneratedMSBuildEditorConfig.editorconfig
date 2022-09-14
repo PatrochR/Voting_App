@@ -8,61 +8,61 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Voting_App
 build_property.RootNamespace = Voting_App
-build_property.ProjectDir = e:\.NetCore\voting app\Voting_App\
+build_property.ProjectDir = E:\.NetCore\voting app\Voting_App\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = e:\.NetCore\voting app\Voting_App
+build_property.MSBuildProjectDirectory = E:\.NetCore\voting app\Voting_App
 build_property._RazorSourceGeneratorDebug = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Account/Login.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Account/Register.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Plan/Create.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Plan/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Plan/Details.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Plan/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Plan/Edit.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Plan/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Plan/Index.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Plan/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGxhblxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Shared/Error.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Shared/PlanDeletePV.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Shared/PlanDeletePV.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFBsYW5EZWxldGVQVi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Shared/_ValidationScriptsPartial.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Vote/Create.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Vote/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVm90ZVxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/_ViewImports.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/_ViewStart.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[e:/.NetCore/voting app/Voting_App/Views/Shared/_Layout.cshtml]
+[E:/.NetCore/voting app/Voting_App/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-vdcr16k19u

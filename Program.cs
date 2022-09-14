@@ -14,7 +14,6 @@ builder.Services.AddDbContext<Context>(options =>
 
 
 builder.Services.AddScoped<IUserRegister , UserRegister>();
-builder.Services.AddScoped<IPlanRepository , PlanRepository>();
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
     .AddCookie(option => 
